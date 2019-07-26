@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
+import PropTypes from 'prop-types'
 
+// this is now an Object of Objects:
 let bookList = [
     { "title": "Hunger", "author": "Roxane Gay", "pages": 320 },
     { "title": "The Sun Also Rises", "author": "Ernest Hemingway", "pages": 260 },
@@ -93,6 +95,17 @@ class Library extends Component {
             </div>
         )
     }
+}
+
+Library.propTypes = {
+    books: PropTypes.array
+}
+
+Book.propTypes = {
+    title: PropTypes.string,
+    author: PropTypes.string,
+    pages: PropTypes.number,
+    freeBookmark: PropTypes.bool
 }
 
 render(
